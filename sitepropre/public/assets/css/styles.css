@@ -1,0 +1,344 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #f6f6f6;
+}
+
+/* HEADER */
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* NAVIGATION */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #c59d5f;
+}
+
+/* ACCUEIL */
+main {
+  min-height: 85.5vh;
+  background-image: url('../img/voiture.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* BLOC ACCUEIL & ESPACEMENT CTA */
+.container-accueil, .container-reservations {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 4px rgba(19,35,47,0.08);
+  display: block;
+}
+
+.container-accueil h1 {
+  color: black;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container-accueil p {
+  margin-bottom: 40px;
+}
+
+.cta {
+  background: linear-gradient(90deg,#c59d5f 0,#ffd700 100%);
+  color: #222;
+  padding: 12px 32px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, color 0.2s, transform 0.12s;
+  margin-top: 20px;
+  display: inline-block;
+}
+.cta:hover {
+  background: #111;
+  color: #ffd700;
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* FOOTER */
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer p {
+  font-size: 14px;
+}
+.social-media {
+  display: flex;
+}
+.social-media img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* CARDS VEHICULES - PREMIUM */
+.container-voitures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  width: 100%;
+  padding: 40px 0;
+  justify-items: center;
+}
+
+.card-voiture {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.09);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 520px;
+  max-width: 400px;
+  position: relative;
+  border: 1px solid #f0e6d2;
+}
+.card-voiture:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 40px rgba(197,157,95,0.14);
+  border: 1.5px solid #c59d5f;
+}
+.img {
+  width: 100%;
+  height: 210px;
+  background: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.img-v {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.nom h2 {
+  margin: 18px 0 10px 0;
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.details {
+  color: #333;
+  background: #f7f7f7;
+  max-height: 0;
+  padding: 0 20px;
+  border-radius: 0 0 16px 16px;
+  font-size: 1rem;
+  text-align: left;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.4s;
+}
+.details.open {
+  max-height: 500px;   
+  padding: 18px 20px;
+}
+
+.details p {
+  margin: 8px 0;
+}
+.details strong {
+  color: #c59d5f;
+}
+
+/* Bouton voir plus */
+.btn-voir-plus {
+  margin-top: auto;
+  padding: 14px 0;
+  background: linear-gradient(90deg,#c59d5f 0,#ffd700 100%);
+  color: #222;
+  width: 100%;
+  border: none;
+  border-radius: 0 0 16px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-voir-plus:hover {
+  background: #111;
+  color: #ffd700;
+}
+
+/* TABLES RÉSERVATIONS & RESPONSIVE */
+.container-reservations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.table-reservations {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+.table-reservations th, .table-reservations td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.table-reservations th {
+  background: #f9f7f2;
+  color: #c59d5f;
+  font-weight: bold;
+}
+
+/* FORMULAIRES */
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  width: 100%;
+  font-family: inherit;
+}
+input[type="submit"] {
+  background: linear-gradient(90deg,#c59d5f 0,#ffd700 100%);
+  color: #222;
+  padding: 10px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+input[type="submit"]:hover {
+  background: #111;
+  color: #ffd700;
+}
+
+/* MESSAGES D'ERREUR */
+.error-message {
+  color: #d00;
+  margin-bottom: 20px;
+}
+
+/* TITRES */
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #c59d5f;
+  margin-bottom: 22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 0 8px;
+    text-align: center;
+  }
+  footer .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container-voitures {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 15px 0;
+  }
+  .card-voiture {
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .container-accueil, .container-reservations {
+    max-width: 99vw;
+    padding: 18px 5px;
+  }
+  .img {
+    height: 140px;
+  }
+  .details.open {
+    height: 190px;
+    padding: 18px 20px;
+  }
+
+
+}
